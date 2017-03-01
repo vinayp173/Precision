@@ -1,0 +1,24 @@
+<html>
+<body>
+<table id="table1">
+	<th><td>Name</td></th>
+</table>
+<div id="div1">
+<input type="text" id="job">
+<button name="btn2" onClick="add();" > add</button>
+<button name="btn" onClick="func();" > Hide</button>
+</div>
+<script>
+	function add(){
+			var table = document.getElementById("table1");
+			var x = document.getElementById("table1").rows.length;
+			var row = table.insertRow(x);
+			var cell1 = row.insertCell(0);
+			cell1.innerHTML =document.getElementById("job").value;
+	}
+ function func(){
+	document.getElementById("div1").style.display='none';
+ }
+</script>
+</body>
+</html>

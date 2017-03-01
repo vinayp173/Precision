@@ -1,0 +1,36 @@
+GTT TEST
+SachinBadrinarayanJadhavu328ks117
+id and password for test: u328ks117
+
+
+Supervisor UI
+stage1 -Advisor ID
+stage2 -Supervisor ID
+
+
+From job_card retrive card_id where stage2=supervisor ID
+From job card details retrive all job id where card_id =card_id[retrive from job card]
+From job retrive job_name where job_id=job_id[retive from job card]
+In job table there is a  new coulumn tech_id -> jobs are assign to technician. job_id=tech_id and status which shows the work is done or not
+
+Supervisors Work
+1.Take list of jobs 
+2.Assign that job to Techincian
+
+Techincian Works
+1.Tick when job is done.
+
+
+
+stage3- Technician ID
+stage4- Washer ID
+
+
+Two cars same job
+in car details we only having chasis number...
+ 
+Supervisor having two cars under so how will he know which car having which operation
+
+How technician will know which car having which operation mumtipe cars are in the Center  -> car Details needs to be provided.. such car name and model of car
+
+Array

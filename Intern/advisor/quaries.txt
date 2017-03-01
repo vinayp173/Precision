@@ -1,0 +1,18 @@
+select llist.list_id,ins.name from inventory_list llist, inventory ins WHERE llist.inventory_id=ins.inventory_id
+------------------------------------------------------------------------------------------
+list spare part for job
+select job.job_id,job.job_name,ins.name from inventory_list llist, inventory ins,job WHERE llist.inventory_id=ins.inventory_id and llist.list_id=job.list_id 
+-----------------------------------------------------------------------------------------
+calculate total amt required for a job
+select job.job_id,job.job_name,sum(ins.price) from inventory_list llist, inventory ins,job WHERE llist.inventory_id=ins.inventory_id and llist.list_id=job.list_id GROUP BY llist.list_id
+-----------------------------------------------------------------------------------------
+calculate total amt for one job using list_id
+SELECT SUM( inv.price ) from inventory inv where inv.inventory_id in(SELECT ilist.inventory_id from inventory_list ilist where ilist.list_id=1)
+------------------------------------------------------------------------------------------
+update job total price using list_id
+update job set job.total_price= (SELECT SUM( inv.price ) from inventory inv where inv.inventory_id in(SELECT ilist.inventory_id from inventory_list ilist where ilist.list_id=1)) where job.list_id=1
+------------------------------------------------------------------------------------------
+select jobs from card_id
+select j.job_name,j.total_price from job j where j.job_id in (select job_id from job_card_details where card_id=9)
+------------------------------------------------------------------------------------------
+select inventory.name where inventory.inventory_id=(select inventory_list.inventory_id from inventory_list where inventory_list.list_id=(SELECT job.list_id from job where job.job_id=1))

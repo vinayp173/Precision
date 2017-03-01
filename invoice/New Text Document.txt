@@ -1,0 +1,14 @@
+table, td, th {    
+    border: 1px solid #000;
+    border-collapse: collapse;
+    border-collapse: collapse;
+text-align: left;
+}
+
+table {
+    
+    width: 75%;
+border-spacing: 5px;
+}
+
+textarea { border: none; }
